@@ -6,6 +6,9 @@
   `specialist-subthread` and `review-gate`.
 - PR readiness: core `review-gate`.
 - Post-merge cleanup: core `post-merge-cleanup`.
+- Pre-development product / UX / requirements challenge:
+  `adapters/research-desk/skills/research-desk-product-challenger`, backed by
+  core `requirements-red-team-review`.
 
 ## Product And Research
 
@@ -33,4 +36,3 @@ Use domain specialists when needed:
 
 External tools may support review, browser QA, design review, deployment, or
 project management, but their internal skills are not copied into this playbook.
-

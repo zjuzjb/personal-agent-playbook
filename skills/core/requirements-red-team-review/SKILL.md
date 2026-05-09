@@ -1,12 +1,13 @@
 ---
 name: requirements-red-team-review
-description: Red-team product requirements, PRDs, issue briefs, acceptance criteria, and implementation plans before development. Use when the user asks for 需求分析红方 review, requirement critique, red-team review, PRD review, spec review, plan challenge, scope risk review, or asks whether a requirement is clear enough to build.
+description: Red-team product requirements, PRDs, issue briefs, UX or information-architecture proposals, acceptance criteria, and implementation plans before development. Use when the user asks for 需求分析红方 review, requirement critique, product challenger, red-team review, PRD review, spec review, plan challenge, scope risk review, or asks whether a requirement is clear enough to build.
 ---
 
 # Requirements Red-Team Review
 
 Use this skill before implementation when the expensive failure would be
-building the wrong thing.
+building the wrong thing. This is a requirements-design review, not a PR Risk
+Gate and not an implementation workflow.
 
 The goal is not to make the requirement bigger. The goal is to expose ambiguity,
 contradiction, missing user value, hidden scope, weak acceptance criteria, and
@@ -23,6 +24,28 @@ unverifiable claims early.
 
 If an input is missing, infer the smallest useful assumption and mark it as an
 assumption instead of stopping unless the missing item makes review impossible.
+
+## Scope
+
+Use for:
+
+- major product, UX, or information-architecture changes;
+- changes to how a product forms, explains, challenges, or tracks a user
+  judgment;
+- plans that risk becoming a dashboard, static report, content pile, or polished
+  but low-value feature;
+- ambiguous tradeoffs that should be clarified before opening issues or coding.
+
+Do not use for:
+
+- PR diff safety review; use a review-gate skill instead;
+- routine implementation or debugging;
+- tiny copy or style fixes;
+- replacing the user's final product decision.
+
+If the user explicitly asks for a challenger or another thread to debate a
+product plan, the main thread may start the review. If the main thread wants to
+start this proactively, ask the user first.
 
 ## Review Lenses
 
@@ -53,6 +76,25 @@ assumption instead of stopping unless the missing item makes review impossible.
    - What can be deferred?
    - What should become a follow-up issue instead of current scope?
 
+## Reviewer Brief
+
+```text
+Role: Product / requirements challenger. Review only; do not implement.
+
+Project goal:
+User decision supported:
+Current proposal:
+Constraints:
+Non-goals:
+Known concerns:
+Specific questions:
+Expected output:
+- Verdict: pass / conditional pass / fail
+- 5-8 strongest challenges
+- Better structure or flow if needed
+- Tradeoffs requiring human confirmation
+```
+
 ## Output
 
 Return findings first, ordered by severity:
@@ -66,6 +108,11 @@ Return findings first, ordered by severity:
 - Verification plan.
 
 Use direct language. Do not bury blockers under encouragement.
+
+The main thread should synthesize challenger output instead of dumping raw
+reviewer text. Convert it into accepted changes, rejected or deferred
+suggestions, remaining tradeoffs, and questions that genuinely need human
+confirmation.
 
 ## Suggested Rewrite Format
 
@@ -93,4 +140,3 @@ A requirement is ready for implementation only when:
 - the smallest useful slice is identified;
 - unresolved questions are either answered or explicitly deferred;
 - verification is realistic for the project.
-

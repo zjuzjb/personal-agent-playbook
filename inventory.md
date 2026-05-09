@@ -15,7 +15,7 @@ unless ownership is later confirmed.
 | `~/.codex/skills/specialist-subthread` | personal | include | `skills/core/specialist-subthread` | Main-thread / specialist-thread split method. |
 | `~/.codex/skills/plan-todo-manager` | personal | include | `skills/core/plan-todo-manager` | Living plan and backlog discipline. |
 | `~/.codex/skills/project-handoff` | personal | adapt | `skills/core/project-handoff` | Kept as a portable handoff contract; local scripts are not copied in v1. |
-| Generalized requirements/product challenger method | personal | include | `skills/core/requirements-red-team-review` | Portable red-team review for PRDs, issue briefs, UX/IA plans, scope, acceptance, and verification before coding. |
+| Generalized product challenger / requirements red-team method | personal | include | `skills/core/product-challenger` | Portable challenger review for PRDs, issue briefs, UX/IA plans, scope, acceptance, and verification before coding. |
 | Research Desk `.agents/skills/review-gate` and `docs/codex/REVIEW_GATE.md` | project-derived | adapt | `skills/core/review-gate`, `templates/REVIEW_GATE.md` | Generalized Completion Gate / Risk Gate / Human Acceptance pattern. |
 | Research Desk `.agents/skills/post-merge-cleanup` and `docs/codex/WORKTREE_FLOW.md` | project-derived | adapt | `skills/core/post-merge-cleanup`, `templates/WORKTREE_FLOW.md` | Generalized checked cleanup. |
 | Research Desk `docs/codex/DEV_RULES.md` | project-derived | adapt | `rules/`, `flows/`, `templates/AGENTS.project.md` | General task framing, scope, verification, and handoff rules. |
@@ -40,7 +40,7 @@ unless ownership is later confirmed.
 |---|---:|---:|---|---|
 | Research Desk `AGENTS.md` and `docs/codex/*` | project-adapter | adapt | `adapters/research-desk` | Keeps Research Desk facts out of core. |
 | Research Desk `.agents/skills/research-desk-issue-flow` | project-adapter | adapt | `adapters/research-desk/issue-flow.md` | Specific GitHub label/status workflow. |
-| Research Desk `.agents/skills/research-desk-product-challenger` from worktree `2ec4` | project-adapter | include | `adapters/research-desk/skills/research-desk-product-challenger` | The concrete Research Desk requirements/product red-team review skill the user identified. |
+| Research Desk `.agents/skills/research-desk-product-challenger` from worktree `2ec4` | project-adapter | adapt | `adapters/research-desk/skills/research-desk-product-challenger` | Research Desk-specific adapter on top of core `product-challenger`. |
 
 ## Reference Candidates
 

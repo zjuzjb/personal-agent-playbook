@@ -5,9 +5,10 @@ description: Use for pre-development Research Desk product, UX, information-arch
 
 # Research Desk Product Challenger
 
-Use this skill to pressure-test a Research Desk product or UX proposal before
-implementation. This is a requirements-design review, not a PR Risk Gate and
-not an implementation workflow.
+Use this Research Desk adapter with the core `product-challenger` skill to
+pressure-test a product or UX proposal before implementation. This is a
+requirements-design review, not a PR Risk Gate and not an implementation
+workflow.
 
 Read first:
 
@@ -16,16 +17,13 @@ Read first:
 - `docs/codex/SKILL_ROUTING.md`
 - `docs/codex/MODEL_ROUTING.md`
 - `docs/codex/UI_ACCEPTANCE.md` when UI is affected
+- `product-challenger` for the portable challenger workflow
 - `personal-equity-research-team` for product and investment-workflow fit
 
 ## Core Rule
 
-If the user explicitly asks for a challenger, reviewer, design critique, or
-another thread to debate a product plan, the main thread may start the review.
-
-If the main thread wants to start this review proactively, ask the user first.
-Do not auto-spawn product challenger or external design reviewer threads without
-user confirmation.
+Follow the core `product-challenger` trigger rule. This adapter adds Research
+Desk-specific product and investment-research checks.
 
 ## Scope
 
@@ -46,30 +44,22 @@ Do not use for:
 - tiny copy/style fixes;
 - replacing the user's final product decision.
 
-## Workflow
+## Research Desk Extra Checks
 
-1. Frame the proposal:
-   - user problem and decision supported;
-   - current proposal or wireframe;
-   - product constraints and non-goals;
-   - known concerns and open questions.
-2. Choose reviewers:
-   - product / investment-workflow challenger for product logic;
-   - visual / interaction / information-architecture reviewer when visual
-     quality and IA both matter;
-   - one reviewer for narrow questions, two when product logic and visual/IA
-     quality both matter;
-   - default to one review round.
-3. Brief reviewers narrowly. Reviewers should challenge the proposal, not
-   redesign the whole product from scratch unless explicitly asked.
-4. Synthesize into:
-   - accepted changes;
-   - rejected or deferred suggestions;
-   - remaining product tradeoffs;
-   - questions that genuinely need human confirmation.
-5. Confirm before development. If the result implies meaningful product, UI, or
-   workflow work, create or update the relevant GitHub issue through the project
-   issue flow before implementation.
+In addition to the core challenger lenses, check:
+
+- Does this help the investor make or revise a judgment, or is it only a nicer
+  container for content?
+- Does it preserve source, date, formula, period, unit, and provenance for key
+  numbers?
+- Does it show current opinion, why, what would change it, and what the team
+  will watch next?
+- Does it avoid becoming a generic dashboard, static sell-side report, or dense
+  content pile?
+- Does the flow fit a continuous research case file instead of a one-shot
+  generated report?
+- If implementation is needed, should it create or update a GitHub issue before
+  coding?
 
 ## Reviewer Brief Template
 

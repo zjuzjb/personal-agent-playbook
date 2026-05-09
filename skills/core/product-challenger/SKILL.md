@@ -1,9 +1,9 @@
 ---
-name: requirements-red-team-review
-description: Red-team product requirements, PRDs, issue briefs, UX or information-architecture proposals, acceptance criteria, and implementation plans before development. Use when the user asks for 需求分析红方 review, requirement critique, product challenger, red-team review, PRD review, spec review, plan challenge, scope risk review, or asks whether a requirement is clear enough to build.
+name: product-challenger
+description: Challenge product requirements, PRDs, issue briefs, UX or information-architecture proposals, acceptance criteria, and implementation plans before development. Use when the user asks for 需求分析红方 review, product challenger, requirement critique, red-team review, PRD review, spec review, design critique, plan challenge, scope risk review, or asks whether a requirement is clear enough to build.
 ---
 
-# Requirements Red-Team Review
+# Product Challenger
 
 Use this skill before implementation when the expensive failure would be
 building the wrong thing. This is a requirements-design review, not a PR Risk
@@ -13,12 +13,24 @@ The goal is not to make the requirement bigger. The goal is to expose ambiguity,
 contradiction, missing user value, hidden scope, weak acceptance criteria, and
 unverifiable claims early.
 
+## Core Rule
+
+If the user explicitly asks for a challenger, red-team review, design critique,
+or another thread to debate a product plan, the main thread may start the
+review.
+
+If the main thread wants to start this review proactively, ask the user first.
+Do not auto-spawn product challenger or external reviewer threads without user
+confirmation.
+
 ## Inputs
 
 - User request, PRD, issue, epic, or plan.
 - Target user and use case.
 - Current product constraints.
 - Proposed scope and non-goals.
+- Current proposal, wireframe, or flow if UI/IA is affected.
+- Known concerns and open questions.
 - Acceptance criteria.
 - Verification plan.
 
@@ -42,10 +54,6 @@ Do not use for:
 - routine implementation or debugging;
 - tiny copy or style fixes;
 - replacing the user's final product decision.
-
-If the user explicitly asks for a challenger or another thread to debate a
-product plan, the main thread may start the review. If the main thread wants to
-start this proactively, ask the user first.
 
 ## Review Lenses
 
@@ -76,10 +84,32 @@ start this proactively, ask the user first.
    - What can be deferred?
    - What should become a follow-up issue instead of current scope?
 
+## Workflow
+
+1. Frame the proposal:
+   - user problem and decision supported;
+   - current proposal or wireframe;
+   - constraints and non-goals;
+   - known concerns and open questions.
+2. Choose review depth:
+   - one challenger for narrow requirement or scope questions;
+   - product plus visual/IA reviewers only when both product logic and interface
+     quality materially matter;
+   - default to one review round.
+3. Brief reviewers narrowly. Reviewers should challenge the proposal, not
+   redesign the whole product from scratch unless explicitly asked.
+4. Synthesize:
+   - accepted changes;
+   - rejected or deferred suggestions;
+   - remaining product tradeoffs;
+   - questions that genuinely need human confirmation.
+5. Confirm before development. If the result implies meaningful product, UI, or
+   workflow work, update the issue, PRD, or plan before implementation.
+
 ## Reviewer Brief
 
 ```text
-Role: Product / requirements challenger. Review only; do not implement.
+Role: Product / UX / requirements challenger. Review only; do not implement.
 
 Project goal:
 User decision supported:
@@ -91,8 +121,16 @@ Specific questions:
 Expected output:
 - Verdict: pass / conditional pass / fail
 - 5-8 strongest challenges
-- Better structure or flow if needed
+- Better structure, flow, or wireframe if needed
 - Tradeoffs requiring human confirmation
+```
+
+For visual or IA review, add:
+
+```text
+Focus on visual hierarchy, density, spacing, responsive behavior, component
+shape, modernity, and whether the UI supports the user's decision instead of
+becoming a generic dashboard or content pile.
 ```
 
 ## Output

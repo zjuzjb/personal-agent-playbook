@@ -31,13 +31,13 @@ Use these playbook items:
 - `skills/core/review-gate`
 - `skills/core/post-merge-cleanup`
 - `skills/core/specialist-subthread`
-- `skills/core/requirements-red-team-review`
+- `skills/core/product-challenger`
 - `skills/domain/personal-equity-research-team`
 - `skills/domain/research-qa-auditor`
 - `skills/domain/sec-xbrl-data-engineer`
 
 ## Adapter Skills
 
-- `adapters/research-desk/skills/research-desk-product-challenger`:
-  pre-development product, UX, information-architecture, and investment-workflow
-  challenge review.
+- `adapters/research-desk/skills/research-desk-product-challenger`: Research
+  Desk-specific overlay for pre-development product, UX,
+  information-architecture, and investment-workflow challenge review.

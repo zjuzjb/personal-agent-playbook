@@ -8,7 +8,7 @@
 - Post-merge cleanup: core `post-merge-cleanup`.
 - Pre-development product / UX / requirements challenge:
   `adapters/research-desk/skills/research-desk-product-challenger`, backed by
-  core `requirements-red-team-review`.
+  core `product-challenger`.
 
 ## Product And Research
 
